@@ -1573,7 +1573,7 @@ class CarbonInterval extends DateInterval implements CarbonConverterInterface
 
         $interval = [];
 
-        $syntax = (int) ($syntax ?? CarbonInterface::DIFF_ABSOLUTE);
+        $syntax = (int) ($syntax === null ? CarbonInterface::DIFF_ABSOLUTE : $syntax);
         $absolute = $syntax === CarbonInterface::DIFF_ABSOLUTE;
         $relativeToNow = $syntax === CarbonInterface::DIFF_RELATIVE_TO_NOW;
         $count = 1;
